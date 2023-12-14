@@ -1,0 +1,123 @@
+<div class="projects-page" *ngIf="model.data.length > 0">
+  <ng-container *ngTemplateOutlet="overflowMenuItemTemplate"></ng-container>
+  <div ibmGrid>
+    <div ibmRow class="projects-heading">
+      <div ibmCol [columnNumbers]="{'lg': 2}"></div>
+      <div ibmCol [columnNumbers]="{'sm': 3}">
+        <ibm-table-container *ngIf="!noData">
+          <ibm-table-header>
+            <h4 ibmTableHeaderTitle>{{title}}</h4>
+            <p ibmTableHeaderDescription>{{description}}</p>
+          </ibm-table-header>
+          <ibm-table-toolbar>
+            <ibm-table-toolbar-search
+            ngDefaultControl
+            [expandable]="false"
+			(keyup)="onSearchKeyDown($event)"
+            >
+            </ibm-table-toolbar-search>
+            <ibm-table-toolbar-content>
+              <button cdsButton ibmButton="primary" size="sm" (click)="toggleModal()">
+                Add Project
+              </button>
+            </ibm-table-toolbar-content>
+          </ibm-table-toolbar>
+          <ibm-table
+            [model]="model"
+            [stickyHeader]="stickyHeader"
+            [size]="size"
+            [skeleton]="loading"
+            [enableSingleSelect]="enableSingleSelect"
+            [showSelectionColumn]="showSelectionColumn"
+            [striped]="striped"
+            [sortable]="sortable"
+            [isDataGrid]="isDataGrid"
+            (rowClick)="onRowClick($event)"
+            [stickyHeader]="false"
+          >
+          </ibm-table>
+        </ibm-table-container>
+        <ibm-table-container *ngIf="noData">
+          <ibm-table-header>
+            <h4 ibmTableHeaderTitle>{{title}}</h4>
+            <p ibmTableHeaderDescription>{{description}}</p>
+          </ibm-table-header>
+          <ibm-table-toolbar>
+            <ibm-table-toolbar-search
+            ngDefaultControl
+            [expandable]="false"
+            >
+            </ibm-table-toolbar-search>
+            <ibm-table-toolbar-content>
+              <button cdsButton ibmButton="primary" size="sm" (click)="toggleModal()">
+                Add Project
+              </button>
+            </ibm-table-toolbar-content>
+          </ibm-table-toolbar>
+          <ibm-table
+            [model]="model"
+            [stickyHeader]="stickyHeader"
+            [size]="size"
+            [skeleton]="loading"
+            [enableSingleSelect]="enableSingleSelect"
+            [showSelectionColumn]="showSelectionColumn"
+            [striped]="striped"
+            [sortable]="sortable"
+            [isDataGrid]="isDataGrid"
+            (rowClick)="onRowClick($event)"
+            [stickyHeader]="false"
+          >
+          <tbody>
+            <tr>
+              <td class="no-data" colspan="4"><div>No data.</div></td>
+            </tr>
+          </tbody>
+        </ibm-table>
+        </ibm-table-container>
+      </div>
+    </div>
+  </div>
+</div>
+<app-spinner *ngIf="loading==true"></app-spinner>
+<ng-template #overflowMenuItemTemplate let-data="data">
+  <ibm-overflow-menu>
+    <ibm-overflow-menu-option
+      (click)="deleteProject($event)"
+    >
+      Delete Project
+    </ibm-overflow-menu-option>
+    <ibm-overflow-menu-option
+      disabled="true"
+    >
+      Modify Quota
+    </ibm-overflow-menu-option>
+    <ibm-overflow-menu-option
+      disabled="true"
+    >
+      Request Quota Increase
+    </ibm-overflow-menu-option>
+  </ibm-overflow-menu>
+</ng-template>
+<ibm-modal *ngIf="openModal"
+  size="xs"
+  [open]="true"
+  (overlaySelected)="toggleModal()">
+  <ibm-modal-header (closeSelect)="toggleModal()">
+    <h2 ibmModalHeaderLabel>Projects</h2>
+    <h3 ibmModalHeaderHeading>Add Project</h3>
+  </ibm-modal-header>
+  <section ibmModalContent>
+    <ibm-label
+    >
+    Project Name
+    <input ibmText
+      ibmText
+      (keyup)="onKey($event)"
+    />
+    </ibm-label>
+  </section>
+  <ibm-modal-footer>
+    <button cdsButton class="bx--btn bx--btn--secondary" (click)="toggleModal()">Cancel</button>
+    <button cdsButton class="bx--btn bx--btn--primary" modal-primary-focus (click)="onAddProjectClick()">Add Project</button>
+  </ibm-modal-footer>
+</ibm-modal>

@@ -1,0 +1,31 @@
+<ibm-modal
+size="lg"
+[open]="true"
+(overlaySelected)="closeModal()">
+<form>
+<ibm-modal-header (closeSelect)="closeModal()">
+    <h2 cdsModalHeaderLabel>Login</h2>
+    <h3 cdsModalHeaderHeading>use your GSA Account name for login</h3>
+</ibm-modal-header>
+<section cdsModalContent [hasForm]="true">
+    <h1 cdsModalContentText class="cds--modal-content__regular-content modal-text">
+        Login Description.
+    </h1>
+    <br>
+    <div [formGroup]="form" class="cds--text-input__field-wrapper">
+        <label helperText="Helper text">
+            Username
+            <input ibmText
+            formControlName="username"
+                cdsText
+                placeholder="Placeholder"
+                [autocomplete]="false">
+        </label>
+    </div>
+</section>
+<ibm-modal-footer>
+    <button cdsButton class="cds--btn cds--btn--secondary" (click)="closeModal()">Close</button>
+    <button cdsButton class="cds--btn cds--btn--primary" modal-primary-focus (click)="submit()">Submit</button>
+</ibm-modal-footer>
+</form>
+</ibm-modal>

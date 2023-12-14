@@ -1,0 +1,11 @@
+{
+    "/api/*":{
+        "target":"https://edlab/",
+        "secure":false,
+        "logLevel":"debug"
+    },    
+    "pathRewrite": {
+        "^/api": ""
+      },
+      "changeOrigin": true
+}

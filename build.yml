@@ -1,0 +1,19 @@
+apiVersion: automation.cio/v1alpha1
+kind: RepositoryConfig
+ealImapNumber: EAL-014209
+build:
+  strategy: cirrus-deployment
+  pipeline: nodejs-v18-npm-ui-container-image 
+  version: v2
+  config:
+    cirrus-project-name: gsa-dev
+    cirrus-pipeline-name: nodejs-v18-gsa-application-ci
+    service-port: '8080'
+    distribution-directory: dist
+    cirrus-region: us-south2
+    cirrus-api-username: 'encrypted:v1:AAABjGAIuhXai3T3WVjxipjvqAadOmGaIb7wpFCRA2Aos/Qm0sCC9IZgD+b9vKoTFTD0F78+01yydclfMEy9e3mDn7sXFIatTnEwucP0XVByxW+waWlir2mfKRqxEGf+L2iuqZOoYX/1vN8CyWnPEa82/Z8nwFQWvFvVr4U6hvobNYmMye+hm6CmuzHn7vFnGvon+dTzX2mG9Rpe'
+    cirrus-api-password: 'encrypted:v1:AAABjGAIuhWLN9lVVouggN3IlhnViwWjtBNDz1HzismcWOQ7rZKb4GHX1EWB8SO2TSuHM4qCTVdB38ZfnGhtSOae0mOsmrYshPPcH+nGLiTqwct3uQSi39mNzNomp/ZNjDJEleDFRXJl+T8qiL6Z7VLn/tE6pqG6vxQT/bESyYyfRwb2qkf3YNvWGkJKYbx+EEHNA22GKNbhxHyLrOMxas6Yz8RulgbDpC6Ptb9GDw=='
+    deploy-verification-memory-request: q128mb
+
+
+

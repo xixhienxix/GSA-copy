@@ -1,0 +1,21 @@
+<ibm-header name="[GSA Web Tools]">
+	<ibm-header-navigation>
+		<ibm-header-item routerLink="name">Name: {{currentUser.displayname}}</ibm-header-item>
+		<ibm-header-item routerLink="gsaid">GSA ID: {{currentUser.uidnumber}}</ibm-header-item>
+		<ibm-header-item routerLink="deparment">Department: {{currentUser.departmentnumber}}</ibm-header-item>
+		<ibm-header-item routerLink="deparment" (click)="logout()">Logout</ibm-header-item>
+	</ibm-header-navigation>
+	<ibm-header-global>
+		<ibm-header-action title="action">
+			<svg ibmIcon="notification" size="20"></svg>
+		</ibm-header-action>
+		<ibm-header-action title="action">
+			<svg ibmIcon="user--avatar" size="20"></svg>
+		</ibm-header-action>
+		<ibm-header-action title="action">
+			<svg ibmIcon="app-switcher" size="20"></svg>
+		</ibm-header-action>
+	</ibm-header-global>
+</ibm-header>
+
+<app-spinner *ngIf="loading==true"></app-spinner>

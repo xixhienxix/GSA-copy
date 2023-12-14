@@ -1,0 +1,246 @@
+ul li + li, ol li + li {
+    padding-top: 0;
+  }
+  
+  ul > li, ol > li {
+    padding-left: 0;
+  }
+  
+  .bx--header__menu.right {
+    right: 0;
+    left: auto;
+    width: auto;
+  }
+  
+  .user-profile-icon {
+    height: 100%;
+    padding: 8px;
+  
+    > div {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 50%;
+      object-fit: cover;
+      color: white;
+      font-size: 14px;
+      line-height: 26px;
+      background-color: #393939;
+      position: relative;
+  
+      img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  
+    &.static-size {
+      padding-left: 0px;
+      padding-right: 0px;
+  
+      > div {
+        width: 30px;
+        height: 30px;
+        padding-left: 7px;
+        line-height: 28px;
+      }
+    }
+  }
+  
+  .bx--header__name {
+    min-width: 201px;
+  }
+  
+  #header-side-menu-button {
+    display: none;
+  }
+  
+  #navigation-menu-side {
+    z-index: 7500;
+  }
+  
+  @media (max-width: 1055px) {
+    #header-side-menu-button {
+      display: inline-block;
+    }
+  }
+  
+  @media (min-width: 1056px) {
+    #navigation-menu-side {
+      display: none;
+    }
+  }
+  
+  .bx--navigation.right-panel {
+    left: unset;
+    right: 0;
+    width: 20rem;
+  }
+  
+  .notification-icon {
+    position: absolute;
+    padding-left: 0.8rem;
+    padding-bottom: 0.8rem;
+    color:red;
+    font-size: 12px;
+  }
+  
+  /*
+  
+  .action-icon {
+    fill: #ffffff;
+  }
+  
+  .action-spacing {
+    margin-right: 10px;
+  }
+  
+  .bx--header__nav {
+    .second-hide {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 1056px) {
+    .bx--header__nav {
+      .second-hide {
+        display: block;
+      }
+    }
+  }
+  
+  .bx--header__menu-title[aria-expanded="true"]
+  {
+    .user-profile-icon {
+      > div {
+        background-color: none;
+      }
+    }
+  }
+  
+  #header-home{
+      padding: 1rem;
+  }
+  #header-home span{
+      font-weight:600;
+  }
+  #header-home p {
+      // padding: 0 0.5em 0 0;
+      // color: black;
+      padding: 0 0.5em 0 1em;
+  }
+  
+  #left-menu{
+      display:none;
+      background-color: white;
+      transition: 0.5s;
+      z-index: 1;
+      li{
+          padding:1rem;
+      }
+  }
+  #left-menu-button{
+      margin:0.5rem;
+      display: none !important;
+  }
+  .left-show{
+      display:block !important;
+  }
+  #right-menu{
+  }
+  #right-menu-button{
+      position: absolute;
+      display: none !important;
+      right: 0.5rem;
+  }
+  .right-show{
+      display:block !important;
+  }
+  
+  #float-menu{
+      display:none;
+  }
+  .float-show{
+      display:block !important;
+  }
+  @media (max-width:31.25rem){
+      #header-help,#float-menu,.global-header,.mobile-hide{
+          display: none !important;
+      }
+      #right-menu-button,#left-menu-button, #left-menu{
+          display: block !important;
+      }
+  }
+  
+  @media (max-width:1055px) and (min-width:31.25rem){
+      #header-menu{
+          display: none !important;
+      }
+      #float-menu{
+          position: relative;
+          display: block !important;
+      }
+  }
+  
+  #header-menu {
+      #dash{
+          background-color: #a8a8a8;
+          width: 1px;
+          height: 2em;
+          margin-right: 1em;
+      }
+  }
+  #ibm-universal-nav{
+      height: 3rem;
+      box-shadow: 0em 0em 0.3em #a8a8a8;
+  }
+  nav, #header-home, #header-home span, #header-menu, #header-help div, #header-help div a{
+      display: flex;
+      align-items: center;
+      height: 100%
+  }
+  #header-help{
+      position: absolute;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      a:hover{
+          background-color: #e0e0e0;
+      }
+  
+  }
+  a{
+      text-decoration: none;
+      color: #000;
+      height: inherit;
+  }
+  .bx--row{
+      margin-right: 0;
+  }
+  .col-padding{
+      height: inherit;
+      padding: 1rem;
+  }
+  .col-padding:hover{
+      background-color: #e0e0e0;
+  }
+  .col-padding-selected{
+      border-bottom: 3px solid #000;
+  }
+  #help, #preferences, #support{
+      // padding-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content:center;
+  }
+  #help, #preferences{
+      height: 3em;
+      width:3em;
+  } */
+  

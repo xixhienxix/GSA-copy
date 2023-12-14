@@ -1,0 +1,52 @@
+
+<div class="logs-page" *ngIf="!loading && parsedLogs.length > 0">
+    <div ibmGrid>
+      <div ibmRow class="logs-heading">
+        <div ibmCol [columnNumbers]="{'lg': 2}"></div>
+        <div ibmCol [columnNumbers]="{'sm': 1}">
+          <h4>GSA Logs</h4>          
+        </div>
+      </div>
+        <div ibmRow>
+            <div ibmCol [columnNumbers]="{'lg': 2}"></div>
+            <div ibmCol [columnNumbers]="{'lg': 8}">
+                <ibm-accordion align="start">
+                    <div *ngFor="let log of parsedLogs">
+                    <ibm-accordion-item [title]="log.fullLog">
+                      <ibm-structured-list>
+                        <ibm-list-header>
+                            <ibm-list-column nowrap="true">Log Information</ibm-list-column>
+                            <ibm-list-column nowrap="true"></ibm-list-column>
+                        </ibm-list-header>
+                        <ibm-list-row>
+                            <ibm-list-column>Request Method</ibm-list-column>
+                            <ibm-list-column>{{log.method}}</ibm-list-column>
+                        </ibm-list-row>
+                        <ibm-list-row>
+                          <ibm-list-column>Time</ibm-list-column>
+                          <ibm-list-column>{{log.time}}</ibm-list-column>
+                        </ibm-list-row>
+                        <ibm-list-row>
+                          <ibm-list-column>Request Endpoint</ibm-list-column>
+                          <ibm-list-column>{{log.restTarget}}</ibm-list-column>
+                        </ibm-list-row>
+                        <ibm-list-row>
+                          <ibm-list-column>Request Parameters</ibm-list-column>
+                          <ibm-list-column>{{log.params}}</ibm-list-column>
+                        </ibm-list-row>
+                        <ibm-list-row>
+                          <ibm-list-column>Request Response</ibm-list-column>
+                          <ibm-list-column *ngIf="log.response === 'SUCCESS'" style="color: #24a148">{{log.response}}</ibm-list-column>
+                          <ibm-list-column *ngIf="log.response !== 'SUCCESS'" style="color: #da1e28">{{log.response}}</ibm-list-column>
+                        </ibm-list-row>
+                        <ibm-list-row>
+                          <ibm-list-column>Request User</ibm-list-column>
+                          <ibm-list-column>{{log.requestUser}}</ibm-list-column>
+                        </ibm-list-row>
+                        </ibm-structured-list>
+                    </ibm-accordion-item>
+                    </div>
+                  </ibm-accordion>
+            </div>
+        </div>
+<app-spinner *ngIf="loading==true"></app-spinner>

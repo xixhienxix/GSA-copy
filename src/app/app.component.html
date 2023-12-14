@@ -1,0 +1,13 @@
+	<app-header *ngIf="(isLoggedIn | async)"></app-header>
+	<!-- <div style="display: flex;"> -->
+		<!-- <app-aside-dynamic></app-aside-dynamic> -->
+			<router-outlet></router-outlet>
+	<!-- </div> -->
+	<app-aside-dynamic *ngIf="(isLoggedIn | async)"></app-aside-dynamic>
+
+	<main class="bx--content" id="main-container">
+		<router-outlet></router-outlet>
+	</main>
+	<ibm-placeholder></ibm-placeholder>
+<!-- 	<ibm-placeholder></ibm-placeholder>
+ -->

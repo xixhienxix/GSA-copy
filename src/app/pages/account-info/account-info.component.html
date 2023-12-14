@@ -1,0 +1,64 @@
+
+<div class="account-page" *ngIf="currentUser && ownedUsers.length > 0">
+    <div ibmGrid>
+        <div *ngIf="!loading" ibmRow>
+			<div ibmCol [columnNumbers]="{'lg': 1}"></div>
+            <div ibmCol [columnNumbers]="{'lg': 2}">
+                <ibm-dropdown
+                    label="GSA ID"
+                    (selected)="onSelect($event)"
+					displayValue="{{currentUser.uid}}"
+                >
+                    <ibm-dropdown-list [items]="ownedUsers"></ibm-dropdown-list>
+                </ibm-dropdown>
+            </div>
+			<div ibmCol [columnNumbers]="{'lg': 4}">
+				<div class="account-list">
+					<ibm-structured-list>
+						<ibm-list-header>
+							<ibm-list-column nowrap="true">Account Information</ibm-list-column>
+							<ibm-list-column nowrap="true"></ibm-list-column>
+						</ibm-list-header>
+						<ibm-list-row>
+							<ibm-list-column>Name</ibm-list-column>
+							<ibm-list-column>{{currentUser.displayname }}</ibm-list-column>
+						</ibm-list-row>
+						<ibm-list-row>
+							<ibm-list-column>Department Number</ibm-list-column>
+							<ibm-list-column>{{currentUser.departmentnumber}}</ibm-list-column>
+						</ibm-list-row>
+						<ibm-list-row>
+							<ibm-list-column>Division</ibm-list-column>
+							<ibm-list-column>{{currentUser.ou}}</ibm-list-column>
+						</ibm-list-row>
+						<ibm-list-row>
+							<ibm-list-column>GSA ID's Owned</ibm-list-column>
+							<ibm-list-column>{{currentUser.users_owned}}</ibm-list-column>
+						</ibm-list-row>
+						<ibm-list-row>
+							<ibm-list-column>Home Directory</ibm-list-column>
+							<ibm-list-column>{{currentUser.homedirectory}}</ibm-list-column>
+						</ibm-list-row>
+						<ibm-list-row>
+							<ibm-list-column>Password Last Set</ibm-list-column>
+							<ibm-list-column>{{currentUser.krblastpwdchange.__datetime__.substring(0,4)}}-{{currentUser.krblastpwdchange.__datetime__.substring(4,6)}}-{{currentUser.krblastpwdchange.__datetime__.substring(6,8)}}</ibm-list-column>
+						</ibm-list-row>
+						<ibm-list-row>
+							<ibm-list-column>Password Expires On</ibm-list-column>
+							<ibm-list-column>{{currentUser.krbpasswordexpiration.__datetime__.substring(0,4)}}-{{currentUser.krbpasswordexpiration.__datetime__.substring(4,6)}}-{{currentUser.krbpasswordexpiration.__datetime__.substring(6,8)}}</ibm-list-column>
+						</ibm-list-row>
+						<!--<ibm-list-row>
+							<ibm-list-column>Token Lifetime (Hours)</ibm-list-column>
+							<ibm-list-column>{{ADD THIS}}</ibm-list-column>
+						</ibm-list-row>-->
+						<ibm-list-row>
+							<ibm-list-column>Login Shell</ibm-list-column>
+							<ibm-list-column>{{currentUser.loginshell}}</ibm-list-column>
+						</ibm-list-row>
+					</ibm-structured-list>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<app-spinner *ngIf="loading==true"></app-spinner>

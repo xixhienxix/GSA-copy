@@ -1,0 +1,158 @@
+<div class="login-container" style="padding-top: 2rem;">
+    <div class="login-grid bx--grid">
+        <div class="main-row bx--row"
+            style="    display: flex; flex-wrap: wrap; margin-left: 5em; ">
+            <div class="form-area bx--col-lg-7 bx--offset-lg-0" md_="[object Object]">
+                <div>
+                    <div class="bx--row"
+                        style="    display: flex; flex-wrap: wrap; margin-right: -1rem; margin-left: -1rem;">
+                        <div class="bx--col"
+                            style="max-width: 100%; flex-basis: 0; flex-grow: 1; width: 100%;  padding-right: 1rem; padding-left: 1rem;">
+                            <div class="login-form"
+                                style="font-size: 2rem; font-weight: 400; line-height: 1.25; letter-spacing: 0; color: #161616;">
+                                <form [formGroup]="loginForm" method="POST" class="ibm-row-form" (ngSubmit)="submitLogin()"
+                                >
+
+                                    <div class="heading-container"
+                                        style="font-size: 2rem; font-weight: 400; line-height: 1.25; letter-spacing: 0; color: #161616;">
+                                        <div class="bx--row"
+                                            style="    display: flex; flex-wrap: wrap; margin-right: -1rem; margin-left: -1rem;">
+                                            <div class="bx--col"
+                                                style="max-width: 100%; flex-basis: 0; flex-grow: 1; width: 100%;  padding-right: 1rem; padding-left: 1rem; padding-bottom: 1REM;">
+                                                <div class="heading"
+                                                    style="font-size: 2rem; font-weight: 400; line-height: 1.25; letter-spacing: 0; color: #161616;">
+                                                    Log in to GSA</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <hr style="border-top: 1px solid #b6b6b6;">
+                                    <div class="bx--row"
+                                        style="display: flex; flex-wrap: wrap; margin-right: -1rem; margin-left: -1rem; padding-bottom: 1REM;">
+                                        <div class="bx--col"
+                                            style="max-width: 100%; flex-basis: 0; flex-grow: 1; width: 100%;  padding-right: 1rem; padding-left: 1rem;">
+                                            <div class="bx--form-item bx--text-input-wrapper"><label for="username"
+                                                    class="bx--label">Username </label>
+                                                <div class="bx--text-input__field-outer-wrapper">
+                                                    <div class="bx--text-input__field-wrapper"><input ibmText id="username" formControlName="username"
+                                                            type="text" class="bx--text-input bx--text-input--lg"
+                                                            name="username" value=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bx--row"
+                                    style="display: flex; flex-wrap: wrap; margin-right: -1rem; margin-left: -1rem; padding-bottom: 1REM;">
+                                    <div class="bx--col"
+                                        style="max-width: 100%; flex-basis: 0; flex-grow: 1; width: 100%;  padding-right: 1rem; padding-left: 1rem;">
+                                        <div class="bx--form-item bx--text-input-wrapper"><label for="password"
+                                                class="bx--label">Password </label>
+                                            <div class="bx--text-input__field-outer-wrapper">
+                                                <div class="bx--text-input__field-wrapper"><input ibmText id="password" formControlName="password"
+                                                        type="text" class="bx--text-input bx--text-input--lg"
+                                                        name="password" value=""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="bx--row"
+                                        style="    display: flex; flex-wrap: wrap; margin-right: -1rem; margin-left: -1rem; padding-bottom: 1REM;">
+                                        <div class="bx--col"
+                                            style="max-width: 100%; flex-basis: 0; flex-grow: 1; width: 100%;  padding-right: 1rem; padding-left: 1rem;">
+                                            <div class="fields-container button-container"><button cdsButton id="continue-button"
+                                                    tabindex="0" class="submit-button bx--btn bx--btn--primary"
+                                                    type="submit">Continue<svg focusable="false"
+                                                        preserveAspectRatio="xMidYMid meet"
+                                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        aria-hidden="true" width="16" height="16" viewBox="0 0 16 16"
+                                                        class="bx--btn__icon">
+                                                        <path
+                                                            d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z">
+                                                        </path>
+                                                    </svg></button></div>
+                                        </div>
+                                    </div>
+                                    <div class="bx--row"
+                                        style="    display: flex; flex-wrap: wrap; margin-right: -1rem; margin-left: -1rem; padding-bottom: 1REM;">
+                                        <div class="bx--col"
+                                            style="max-width: 100%; flex-basis: 0; flex-grow: 1; width: 100%;  padding-right: 1rem; padding-left: 1rem;">
+                                            <div class="remember-me-wrapper">
+                                                <div class="bx--form-item bx--checkbox-wrapper"><input type="checkbox"
+                                                        class="bx--checkbox" id="remember"><label for="remember"
+                                                        class="bx--checkbox-label"><span class="bx--checkbox-label-text"
+                                                            dir="auto">
+                                                            <div id="__carbon-tooltip-trigger_m205nam89o"
+                                                                class="bx--tooltip__label" >Remember me<div
+                                                                    class="bx--tooltip__trigger" role="button"
+                                                                    tabindex="0"
+                                                                    aria-labelledby="__carbon-tooltip-trigger_m205nam89o">
+                                                                    <svg focusable="false"
+                                                                        preserveAspectRatio="xMidYMid meet"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        fill="currentColor" width="16" height="16"
+                                                                        viewBox="0 0 16 16" aria-hidden="true">
+                                                                        <path
+                                                                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z">
+                                                                        </path>
+                                                                        <path
+                                                                            d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                    </span></label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr style="border-top: 1px solid #b6b6b6;">
+
+                                    <div class="bx--row"
+                                        style="    display: flex; flex-wrap: wrap; margin-right: -1rem; margin-left: -1rem; padding-bottom: 1REM;">
+                                        <div class="bx--col"
+                                            style="max-width: 100%; flex-basis: 0; flex-grow: 1; width: 100%;  padding-right: 1rem; padding-left: 1rem;">
+                                            <div class="fields-container bottom-link-container"
+                                                style="color: #525252; font-size: 14px;">
+                                                <div class="register-text body-01">
+                                                    <p style="padding-bottom: 1REM;">Don't have an account?</p>
+                                                    <div><a tabindex="0" class="bx--btn bx--btn--tertiary"
+                                                            >Create an GSA Account<svg focusable="false"
+                                                                preserveAspectRatio="xMidYMid meet"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                                aria-hidden="true" width="16" height="16"
+                                                                viewBox="0 0 16 16" class="bx--btn__icon">
+                                                                <path
+                                                                    d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z">
+                                                                </path>
+                                                            </svg></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr style="border-top: 1px solid #b6b6b6;">
+
+                                    <div class="bx--row"
+                                        style="    display: flex; flex-wrap: wrap; margin-right: -1rem; margin-left: -1rem; padding-bottom: 1REM;">
+                                        <div class="bx--col"
+                                            style="max-width: 100%; flex-basis: 0; flex-grow: 1; width: 100%;  padding-right: 1rem; padding-left: 1rem;">
+                                            <p class="help-link">Forgot GSA Account? <a
+                                                    href="">Contact
+                                                    the GSA help desk</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-pannel bx--col-lg-9 bx--offset-lg-0" md_="[object Object]">
+                <div class="canvas-container">
+                    <div class="login-canvas"
+                        style="background-image: url(&quot;https://www.ibm.com/account/ibmidutil/login-ui/img/illustration-final.svg&quot;);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-spinner *ngIf="loading==true"></app-spinner>

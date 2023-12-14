@@ -1,0 +1,20 @@
+apiVersion: cirrus.ibm.com/v1alpha1
+kind: Application
+metadata:
+  name: gsa-dev-pre
+spec:
+  replicas: 1 
+  quota: q512mb
+  envFrom:
+    - secretRef:
+        name: gsa-dev-pre-sec
+  livenessProbe:
+    httpGet:
+      path: /health/ping
+    periodSeconds: 300
+    timeoutSeconds: 300
+  readinessProbe:
+    httpGet:
+      path: /health/ping
+    periodSeconds: 300
+    timeoutSeconds: 300

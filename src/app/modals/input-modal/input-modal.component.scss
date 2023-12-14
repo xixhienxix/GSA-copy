@@ -1,0 +1,90 @@
+.bx--modal-footer {
+    display: flex;
+    height: 4rem;
+    justify-content: flex-end;
+    margin-top: auto;
+    grid-column: 1/-1;
+    grid-row: -1/-1;
+}
+.cds--modal-footer .cds--btn {
+    max-width: none;
+    height: 4rem;
+    flex: 0 1 50%;
+    align-items: baseline;
+    padding-top: 0.875rem;
+    padding-bottom: 2rem;
+    margin: 0;
+}
+.cds--btn--secondary {
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    background-color: var(--cds-button-secondary, #393939);
+    color: var(--cds-text-on-color, #ffffff);
+}
+.ibm--modal {
+    position: fixed;
+    z-index: 9000;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ibm-overlay, rgba(22, 22, 22, 0.5));
+    content: "";
+    opacity: 0;
+    transition: opacity 240ms cubic-bezier(0.4, 0.14, 1, 1), visibility 0ms linear 240ms;
+    visibility: hidden;
+}
+.cds--btn--primary {
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    background-color: var(--cds-button-primary, #0f62fe);
+    color: var(--cds-text-on-color, #ffffff);
+}
+
+.cds--btn {
+    --ibm-layout-size-height-local: clamp(var(--ibm-layout-size-height-min), var(--ibm-layout-size-height, var(--ibm-layout-size-height-lg)), var(--ibm-layout-size-height-max));
+    --ibm-layout-density-padding-inline-local: clamp(var(--ibm-layout-density-padding-inline-min), var(--ibm-layout-density-padding-inline, var(--ibm-layout-density-padding-inline-normal)), var(--ibm-layout-density-padding-inline-max));
+    --temp-1lh: ( var(--ibm-body-compact-01-line-height, 1.28572) * 1em );
+    --temp-expressive-1lh: ( var(--ibm-body-compact-02-line-height, 1.375) * 1em );
+    --temp-padding-block-max: calc( (var(--ibm-layout-size-height-lg) - var(--temp-1lh)) / 2 - 0.0625rem );
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-size: var(--ibm-body-compact-01-font-size, 0.875rem);
+    font-weight: var(--ibm-body-compact-01-font-weight, 400);
+    line-height: var(--ibm-body-compact-01-line-height, 1.28572);
+    letter-spacing: var(--ibm-body-compact-01-letter-spacing, 0.16px);
+    position: relative;
+    display: inline-flex;
+    width: max-content;
+    max-width: 20rem;
+    min-height: var(--ibm-layout-size-height-local);
+    flex-shrink: 0;
+    justify-content: space-between;
+    margin: 0;
+    border-radius: 0;
+    cursor: pointer;
+    outline: none;
+    padding-block: min((var(--ibm-layout-size-height-local) - var(--temp-1lh)) / 2 - 0.0625rem, var(--temp-padding-block-max));
+    padding-inline-end: calc(var(--ibm-layout-density-padding-inline-local) * 3 + 1rem - 0.0625rem);
+    padding-inline-start: calc(var(--ibm-layout-density-padding-inline-local) - 0.0625rem);
+    text-align: left;
+    text-decoration: none;
+    transition: background 70ms cubic-bezier(0, 0, 0.38, 0.9), box-shadow 70ms cubic-bezier(0, 0, 0.38, 0.9), border-color 70ms cubic-bezier(0, 0, 0.38, 0.9), outline 70ms cubic-bezier(0, 0, 0.38, 0.9);
+    vertical-align: top;
+}
+
+body {
+    background-color: var(--ibm-background, #ffffff);
+    color: var(--ibm-text-primary, #161616);
+    line-height: 1;
+}
